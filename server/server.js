@@ -17,7 +17,7 @@ const opts = {
 };
 
 // define the listening port and hostname
-const port = 3000;
+const port = 3033;
 const host = 'localhost';
 
 const app = express();
@@ -54,5 +54,10 @@ const server = https.createServer(opts, app);
 // start the server and listen to the given host and port
 server.listen(port, host, () => {
 	var baseUrl = `https://${host}:${port}`;
-	console.log('Server listening at : %s', baseUrl);
+	console.log(`
+Server listening at ${baseUrl} :
+To see demo, run in a new session:
+
+  - \`npm run valid-client\`
+  - \`npm run invalid-client\``);
 })
